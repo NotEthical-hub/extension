@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Download Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔌 Extension Download Hub</h1>
+        <p class="subtitle">Upload, Host & Share Your Chrome Extensions</p>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>📤 Upload Extension</h2>
+            <form id="uploadForm">
+                <div class="file-input">
+                    <input type="file" id="extensionFile" accept=".zip" required>
+                    <label for="extensionFile">Choose ZIP file</label>
+                </div>
+                <button type="submit" id="uploadBtn">Upload Extension</button>
+            </form>
+            <div id="uploadProgress" class="progress-bar" style="display: none;">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Current Extension Section -->
+        <div class="current-extension">
+            <h2>📦 Current Extension</h2>
+            <div id="noExtension" class="no-extension">
+                <p>No extension uploaded yet</p>
+            </div>
+            <div id="extensionInfo" class="extension-info" style="display: none;">
+                <div class="extension-card">
+                    <h3 id="fileName">extension.zip</h3>
+                    <p id="fileSize">0 KB</p>
+                    <p id="uploadTime"></p>
+                    <div class="extension-actions">
+                        <a href="#" id="downloadLink" class="btn download-btn" download>📥 Download Extension</a>
+                        <button id="copyLinkBtn" class="btn copy-btn">🔗 Copy Download Link</button>
+                        <button id="deleteBtn" class="btn delete-btn">🗑️ Delete</button>
+                    </div>
+                    <div class="share-section">
+                        <h4>Share Link:</h4>
+                        <div class="share-box">
+                            <input type="text" id="shareLink" readonly>
+                            <button id="copyShareBtn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Installation Instructions -->
+        <div class="instructions">
+            <h2>📖 Installation Instructions</h2>
+            
+            <div class="instruction-card">
+                <h3>For Chrome Users:</h3>
+                <ol>
+                    <li>Download the extension ZIP file</li>
+                    <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+                    <li>Enable <strong>Developer mode</strong> (top right corner)</li>
+                    <li>Drag and drop the ZIP file anywhere on the page</li>
+                    <li>Click "Add Extension" when prompted</li>
+                </ol>
+                <div class="tip">
+                    💡 <strong>Tip:</strong> ZIP file ko directly extensions page par drag karo
+                </div>
+            </div>
+
+            <div class="instruction-card">
+                <h3>For Edge Users:</h3>
+                <ol>
+                    <li>Download the extension ZIP file</li>
+                    <li>Open Edge and go to <code>edge://extensions/</code></li>
+                    <li>Enable <strong>Developer mode</strong></li>
+                    <li>Click "Load unpacked" and select the ZIP file</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                ⚠️ <strong>Security Note:</strong> Only install extensions from sources you trust!
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Made for testing purposes | All data stored in your browser</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
